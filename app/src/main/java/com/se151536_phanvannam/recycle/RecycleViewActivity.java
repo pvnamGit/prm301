@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import com.se151536_phanvannam.R;
 import com.se151536_phanvannam.adapter.Adapter;
@@ -32,5 +34,12 @@ public class RecycleViewActivity extends AppCompatActivity {
         Adapter adapter = new Adapter(moreOptionsList, getApplicationContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(linearLayoutManager);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
