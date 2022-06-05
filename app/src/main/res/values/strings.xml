@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SE151536</string>
+    <string name="sign_in">Sign In</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="my_profile">My Profile</string>
+    <string name="log_in">Log In</string>
+    <string name="bank_balance">Balance</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="other_service">More</string>
+</resources>
