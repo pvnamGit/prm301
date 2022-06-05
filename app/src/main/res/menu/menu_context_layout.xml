@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_facebook"
+        android:title="Facebook" />
+
+    <item
+        android:id="@+id/menu_insta"
+        android:title="Instagram" />
+
+    <item
+        android:id="@+id/menu_twitter"
+        android:title="Twitter" />
+
+    <item
+        android:id="@+id/menu_tiktok"
+        android:title="Tiktok" />
+</menu>
