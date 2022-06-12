@@ -1,5 +1,7 @@
 package com.se151536_phanvannam.pages;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,7 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.se151536_phanvannam.MainActivity;
 import com.se151536_phanvannam.R;
 
 public class ProfilePage extends AppCompatActivity {
@@ -22,6 +23,14 @@ public class ProfilePage extends AppCompatActivity {
 
         Button moreInfoBtn = findViewById(R.id.more_info);
         registerForContextMenu(moreInfoBtn);
+
+        Button goToWebsiteBtn = findViewById(R.id.website_btn);
+        goToWebsiteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToWebsite();
+            }
+        });
     }
 
     @Override
@@ -49,6 +58,15 @@ public class ProfilePage extends AppCompatActivity {
                 return true;
             default:
                 return super.onContextItemSelected(item);
+        }
+    }
+
+    private void goToWebsite() {
+        Uri webpage = Uri.parse("https://www.youtube.com/watch?v=qQ75cxc5q8o&ab_channel=TheFlutterWay");
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
         }
     }
 }

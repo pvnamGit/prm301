@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.se151536_phanvannam.MainActivity;
 import com.se151536_phanvannam.R;
-import com.se151536_phanvannam.camera.CameraPreviewActivity;
+import com.se151536_phanvannam.notifications.NotificationActivity;
 import com.se151536_phanvannam.pages.ProfilePage;
 import com.se151536_phanvannam.pages.UpdateSoonPage;
 import com.se151536_phanvannam.recycle.RecycleViewActivity;
@@ -46,10 +46,10 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.open_camera_btn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.play_music_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCameraPreview();
+                playMusic();
             }
         });
 
@@ -108,8 +108,8 @@ public class HomePage extends AppCompatActivity {
         }
     }
 
-    private void showCameraPreview() {
-        Intent intent = new Intent(HomePage.this, CameraPreviewActivity.class);
+    private void playMusic() {
+        Intent intent = new Intent(HomePage.this, NotificationActivity.class);
         startActivity(intent);
     }
 
@@ -130,7 +130,7 @@ public class HomePage extends AppCompatActivity {
 
     private void makeCall() {
         Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel: 11111111"));
+        intent.setData(Uri.parse("tel: 0334472199"));
         if(intent.resolveActivity(getPackageManager()) != null){
             startActivity(intent);
         }

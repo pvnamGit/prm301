@@ -143,5 +143,18 @@
         app:layout_constraintVertical_bias="0.286"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/website_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to my website"
+        android:background="@color/black_overlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/more_info"
+        app:layout_constraintVertical_bias="0.312" />
+
 
 </android.support.constraint.ConstraintLayout>

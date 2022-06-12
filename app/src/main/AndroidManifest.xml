@@ -22,6 +22,7 @@
         <activity android:name=".recycle.RecycleViewActivity" android:exported="false" />
         <activity android:name=".pages.ProfilePage" android:exported="false" />
         <activity android:name=".pages.UpdateSoonPage" android:exported="false" />
+        <activity android:name=".notifications.NotificationActivity" android:exported="false"/>
     </application>
 
 </manifest>
