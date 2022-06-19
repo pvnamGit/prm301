@@ -28,14 +28,15 @@ public class NotificationActivity extends AppCompatActivity {
         btn_start.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {
-                                             String channel_id = "chanel_id";
+                                             String channel_id = "channel_id";
                                              CharSequence name = "channel_name";
                                              int importance = NotificationManager.IMPORTANCE_DEFAULT;
                                              Context context = getApplicationContext();
                                              Intent i = new Intent(
                                                      Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
                                              PendingIntent pe = PendingIntent.getActivity(getApplicationContext(), 0, i, PendingIntent.FLAG_CANCEL_CURRENT);
-                                             Notification builder = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.ic_launcher_background).setContentTitle("this is title").setContentText(" Music is playing")
+                                             Notification builder = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.ic_launcher_background).setContentTitle("Open browser successful")
+                                                     .setContentText("You are in GOOGLE")
                                                      .setChannelId(channel_id).setContentIntent(pe).build();
                                              NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
                                              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {// chu o
