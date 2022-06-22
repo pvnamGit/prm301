@@ -18,6 +18,9 @@ import com.se151536_phanvannam.users.Users;
 
 public class MainActivity extends AppCompatActivity {
     private UserManagementDAO userManagementDAO;
+    EditText username;
+    EditText password;
+    CheckBox rememberMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void login() {
-        EditText username = findViewById(R.id.username);
-        EditText password = findViewById(R.id.password);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        rememberMe = findViewById(R.id.remember_me_checkbox);
         Button loginBtn = findViewById(R.id.logInBtn);
         Button registerBtn = findViewById(R.id.sign_up_redirect_btn);
-        CheckBox rememberMe = findViewById(R.id.remember_me_checkbox);
-        loadData(username, password, rememberMe);
+        loadData();
         userManagementDAO = new UserManagementDAO(MainActivity.this);
 
         //With username, password are "admin", login successful, else failed
@@ -89,13 +92,13 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
     }
 
-    private void loadData(EditText username, EditText password, CheckBox checkBox) {
-        SharedPreferences pref = getSharedPreferences("information.save", MODE_PRIVATE);
-        boolean check = pref.getBoolean("check", false);
-        if (check) {
-            username.setText(pref.getString("username", ""));
-            username.setText(pref.getString("password", ""));
-            checkBox.setChecked(check);
+    private  void loadData(){
+        SharedPreferences pref = getSharedPreferences("information.save",MODE_PRIVATE);
+        boolean check = pref.getBoolean("check",false);
+        if(check){
+            username.setText(pref.getString("username",""));
+            password.setText(pref.getString("password",""));
+            rememberMe.setChecked(check);
         }
     }
 }
